@@ -8,7 +8,7 @@
         <version>7</version>
     </parent>
 
-    <groupId>org.jfno.jdbc</groupId>
+    <groupId>com.github.jfno</groupId>
     <artifactId>sqlBuilder</artifactId>
     <packaging>jar</packaging>
     <version>0.1-SNAPSHOT</version>
