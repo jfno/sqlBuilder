@@ -23,8 +23,8 @@
 
     <url>https://github.com/jfno/sqlBuilder</url>
     <scm>
-        <connection>scm:git:git://github.com/jfno/sqlBuilde.git</connection>
-        <developerConnection>scm:git:git@github.com:jfno/sqlBuilde.git</developerConnection>
+        <connection>scm:git:git://github.com/jfno/sqlBuilder.git</connection>
+        <developerConnection>scm:git:git@github.com:jfno/sqlBuilder.git</developerConnection>
         <url>https://github.com/jfno/sqlBuilder</url>
     </scm>
 
