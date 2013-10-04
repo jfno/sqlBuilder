@@ -1,6 +1,12 @@
+.classpath
+.project
+.settings/
+target/
+*.DS_Store
 .idea/
 *.class
-
+*.iml
+bin/
 # Package Files #
 *.jar
 *.war
