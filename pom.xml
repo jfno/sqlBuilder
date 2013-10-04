@@ -10,7 +10,7 @@
     <groupId>com.github.jfno</groupId>
     <artifactId>sqlBuilder</artifactId>
     <packaging>jar</packaging>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1</version>
     <name>sqlBuilder</name>
 
     <licenses>
