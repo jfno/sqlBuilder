@@ -22,7 +22,18 @@ public class SqlBuilder {
         SUB_WHERE
     }
 
+    public enum JoinType {
+        INNER,
+        LEFT_OUTER,
+        RIGHT_OUTER,
+        OUTER
+    }
+
     public SqlBuilder addTable(String table, String alias, String idColumn) {
+        return addTable(table, alias, idColumn, JoinType.INNER);
+    }
+
+    public SqlBuilder addTable(String table, String alias, String idColumn, JoinType joinType) {
         String fullTableName = JOINER.join(table, " ", alias);
         if (!sql().tables.contains(fullTableName)) {
             if (sql().tables.size() == 0) {
@@ -30,7 +41,20 @@ public class SqlBuilder {
                 this.FROM(fullTableName);
                 baseJoin = JOINER.join(alias, ".", idColumn);
             } else {
-                this.INNER_JOIN(fullTableName, " ON ", baseJoin, " = ", alias, ".", idColumn);
+                switch (joinType) {
+                    case INNER:
+                        this.INNER_JOIN(fullTableName, " ON ", baseJoin, " = ", alias, ".", idColumn);
+                        break;
+                    case LEFT_OUTER:
+                        this.LEFT_OUTER_JOIN(fullTableName, " ON ", baseJoin, " = ", alias, ".", idColumn);
+                        break;
+                    case RIGHT_OUTER:
+                        this.RIGHT_OUTER_JOIN(fullTableName, " ON ", baseJoin, " = ", alias, ".", idColumn);
+                        break;
+                    case OUTER:
+                        this.OUTER_JOIN(fullTableName, " ON ", baseJoin, " = ", alias, ".", idColumn);
+                        break;
+                }
             }
         }
         return this;
